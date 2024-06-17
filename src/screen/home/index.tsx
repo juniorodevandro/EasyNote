@@ -1,8 +1,8 @@
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
-// import { FormTask } from '../../components/Form';
-// import { Tasks } from '../../components/Tasks';
 import { useState } from 'react';
-import { FormTask } from '../../components/form';
+import { FormTask } from '../../components/Form';
+import { Tasks } from '../../components/Tasks';
+import Actions from '../../components/actions';
 // import Actions from '../../components/actions';
 
 export function Home() {
@@ -17,7 +17,19 @@ export function Home() {
       <Text style={styles.text}>Crie e gerencie suas tarefas</Text>
 
       <FormTask/>
-      
+
+      <Actions filter={filter} setFilter={ (status) => setFilter(status) } />
+
+      {filter && (
+        <Tasks filter={filter} />
+      )}
+
+      {!filter && (
+        <Tasks filter={filter} />
+      )}
+
+      {/* <Tasks filter={filter}/> */}
+
     </SafeAreaView>
     </>
   );
