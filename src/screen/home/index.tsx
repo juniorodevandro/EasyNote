@@ -2,6 +2,7 @@ import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 // import { FormTask } from '../../components/Form';
 // import { Tasks } from '../../components/Tasks';
 import { useState } from 'react';
+import { FormTask } from '../../components/form';
 // import Actions from '../../components/actions';
 
 export function Home() {
@@ -14,6 +15,9 @@ export function Home() {
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Easy Notes</Text>
       <Text style={styles.text}>Crie e gerencie suas tarefas</Text>
+
+      <FormTask/>
+      
     </SafeAreaView>
     </>
   );
